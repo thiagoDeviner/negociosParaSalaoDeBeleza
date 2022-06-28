@@ -971,9 +971,7 @@ header .nav-bar {
   /* inicio secao produtos */
 
   .swiper-slide img {
-    display: grid;
-    justify-self: center;
-    width: 50%;
+    width: 100%;
     min-height: 100vh;
   }
 
