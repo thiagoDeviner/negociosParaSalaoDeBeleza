@@ -5,7 +5,7 @@
  *
  * Copyright 2014-2022 Vladimir Kharlampidi
  *
- * Released under the MIT License
+ * Released under the MIT Licenses
  *
  * Released on: May 16, 2022
  */

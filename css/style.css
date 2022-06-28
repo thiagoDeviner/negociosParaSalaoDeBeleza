@@ -517,7 +517,7 @@ header .nav-bar {
 
   .media-icons a {
     color: var(--white-color);
-    font-size: 1.7em;
+    font-size: 2em;
     margin: 10px 0;
   }
 
@@ -791,6 +791,11 @@ header .nav-bar {
     width: 60%;
   }
 
+  .nav-close-btn,
+.nav-menu-btn {
+  font-size: 1.4em;
+}
+
   .navigation .nav-items {
     position: relative;
     background: var(--white-color);
@@ -817,6 +822,15 @@ header .nav-bar {
     color: var(--dark-color);
     font-size: 0.8em;
     margin: 0.5em 0.5em;
+    transition: 0.5s ease;
+  }
+
+  header.sticky {
+    height: calc(2.5rem + 1rem);
+    background: #202834;
+    opacity: 0.8;
+    border-bottom: 1px solid rgba(255, 255, 255 0.1);
+    height: 80px;
     transition: 0.5s ease;
   }
 
@@ -847,9 +861,6 @@ header .nav-bar {
     right: 0.01em;
     color: #fff;
   }
-
-
-}
 
   /* final slider */
 
@@ -906,15 +917,61 @@ header .nav-bar {
 
   }
 
-  /* inicio secao sobre */
+  /* final secao sobre */
 
+   /* inicio secao valores */
+
+   .container-valores {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.6fr 1fr;
+
+    grid-template-areas:
+      "h3-missao"
+      "icon-missao"
+      "p-missao"
+      "h3-visao"
+      "icon-visao"
+      "p-visao"
+      "h3-valores"
+      "icon-valores"
+      "p-valores";
+    min-width: 18em;
+  }
+
+  .h3-missao,
+  .h3-visao,
+  .h3-valores {
+    grid-area: h3-missao, h3-visao, h3-valores;
+    font-size: 1.4em;
+  }
+
+  .icon-missao,
+  .icon-visao,
+  .icon-valores {
+    grid-area: icon-missao, icon-visao, icon-valores;
+    font-size: 2em;
+  }
+
+  .p-missao,
+  .p-visao,
+  .p-valores {
+    font-size: 1em;
+  
+   /* final secao valores */
+
+
+
+/* inicio secao produtos */
+
+
+/* final secao produtos */
+}
 
 @media screen and (max-width: 320px) {
   /* início menu navegacao */
 
-  .nav-bar .logo {
-    margin-left: 0em;
-  }
+
 
   /* final menu navegacao */
 
@@ -935,4 +992,5 @@ header .nav-bar {
   /* inicio secao valores */
 
   /* final secao valores */
+}
 }
