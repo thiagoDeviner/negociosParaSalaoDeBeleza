@@ -1112,6 +1112,18 @@ header .nav-bar {
 
   /* inicio secao sobre */
 
+  .p-sobre {
+    grid-area: p-sobre;
+    font-size: 0.9em;
+    color: #fff;
+    margin: 0em 1em 1em 1em;
+    text-align: center;
+  }
+
+  .img-sobre {
+    grid-area: img-sobre;
+  }
+
   /* final secao sobre */
 
   /* inicio secao valores */
