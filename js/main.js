@@ -3,7 +3,7 @@
 var swiper = new Swiper(".mySwiper", {
   
   autoplay: {
-    delay: 8000,
+    delay: 6000,
   },
 
   loop: true,
@@ -56,7 +56,7 @@ closeBtn.addEventListener("click", () => {
 
 var swiper = new Swiper(".swiper", {
   autoplay: {
-    delay: 8000,
+    delay: 6000,
   },
 
   loop: true,
