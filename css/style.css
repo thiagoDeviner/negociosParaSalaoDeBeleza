@@ -331,7 +331,7 @@ header .nav-bar {
   align-content: center;
   z-index: 999;
 
-  margin: 0em 0em 10em 0em;
+  margin: 0em 0em 0em 0em;
 
   grid-template-areas:
     ". h3-missao h3-visao h3-valores ."
@@ -403,7 +403,8 @@ header .nav-bar {
 /* inicio da secao produtos */
 
 .container-produtos {
-  width: 100%;
+  max-width: 100%;
+  padding: 0em 0em 0em 0em;
   max-height: 50vh;
   background: #fff;
   display: flex;
@@ -417,7 +418,7 @@ header .nav-bar {
 }
 
 .swiper-slide img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .swiper .swiper-button-next {
@@ -436,14 +437,32 @@ header .nav-bar {
 
 /* media queries */
 
+
+
 @media screen and (max-width: 1280px) {
+
+/* inicio secao produtos */
+
   .container-produtos .swiper-slide img {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: 50vh;
     object-fit: cover;
   }
+
+  /* final secao produtos */
 }
+
+@media screen and (max-width: 1080px) {
+
+  /* inicio secao produtos */
+  
+    .container-produtos .swiper-slide img {
+      max-width: 100%;
+    }
+  
+    /* final secao produtos */
+  }
 
 @media screen and (max-width: 1024px) {
   /* inicio menu nav-bar */
@@ -544,13 +563,10 @@ header .nav-bar {
 
   /* inicio secao valores */
 
+
   /* final secao valores */
 
   /* inicio secao produtos */
-
-  .container-valores {
-    margin: 0em 0em 0em 0em;
-  }
 
   .container-produtos .swiper-slide img {
     display: block;
@@ -742,7 +758,7 @@ header .nav-bar {
     grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 0.6fr 1fr;
 
-    margin: 0em 0em 20em 0em;
+    margin: 0em 0em 0em 0em;
 
     grid-template-areas:
       "h3-missao"
@@ -789,6 +805,7 @@ header .nav-bar {
 }
 
 @media screen and (max-width: 480px) {
+
   .nav-bar .logo {
     margin-left: 0px;
   }
@@ -943,7 +960,6 @@ header .nav-bar {
       "h3-valores"
       "icon-valores"
       "p-valores";
-    min-width: 18em;
   }
 
   .h3-missao,
@@ -969,6 +985,8 @@ header .nav-bar {
   /* final secao valores */
 
   /* inicio secao produtos */
+
+
 
   .swiper-slide img {
     width: 100%;
@@ -1127,4 +1145,11 @@ header .nav-bar {
   /* inicio secao valores */
 
   /* final secao valores */
+
+  /* inicio secao produtos */
+
+  .container-produtos .swiper-slide img {
+  }
+
+  /* final secao produtos */
 }
