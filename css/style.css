@@ -87,7 +87,7 @@ header .nav-bar {
 
 .nav-close-btn,
 .nav-menu-btn {
-  display: none;
+  display: block;
 }
 
 .nav-bar .logo {
@@ -203,8 +203,9 @@ header .nav-bar {
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
+  object-position: bottom;
   background-position: center;
 }
 
@@ -324,14 +325,11 @@ header .nav-bar {
 .container-valores {
   display: grid;
   grid-template-columns: 0.3fr 1.4fr 1.6fr 1.4fr 0.3fr;
-  grid-template-rows: 0.4fr 0.8fr 1.8fr;
+  grid-template-rows: 0.2fr 0.2fr 1fr;
   gap: 0px 0px;
-  grid-auto-flow: row;
   background: #efd76b;
-  align-content: center;
-  z-index: 999;
-
   margin: 0em 0em 0em 0em;
+  height: 70%;
 
   grid-template-areas:
     ". h3-missao h3-visao h3-valores ."
@@ -361,20 +359,20 @@ header .nav-bar {
   grid-area: icon-missao;
   justify-self: center;
   color: #222;
-  font-size: 3rem;
+  font-size: 3em;
 }
 
 .icon-visao {
   grid-area: icon-visao;
   justify-self: center;
-  font-size: 3rem;
+  font-size: 3em;
   color: #222;
 }
 
 .icon-valores {
   grid-area: icon-valores;
   justify-self: center;
-  font-size: 3rem;
+  font-size: 3em;
   color: #222;
 }
 
@@ -383,7 +381,6 @@ header .nav-bar {
   justify-self: center;
   max-width: 70%;
   text-align: center;
-  padding-top: 20px;
 }
 
 .p-missao {
@@ -414,7 +411,6 @@ header .nav-bar {
 
 #produtos {
   width: 100%;
-  object-fit: cover;
 }
 
 .swiper-slide img {
@@ -435,18 +431,81 @@ header .nav-bar {
 
 /* final da secao produtos */
 
-/* media queries */
+/* inicio secao rodape */
+
+.container-rodape {
+  display: grid;
+  grid-template-columns: 0.4fr 2fr 1.2fr 0.4fr;
+  grid-template-rows: 0.4fr 2.1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+
+  background: rgb(52, 50, 52);
+  grid-template-areas:
+    ". . h2-footer ."
+    ". contato-footer sobre-footer ."
+    ". . . .";
+}
+
+.contato-footer {
+  grid-area: contato-footer;
+  display: flex;
+  flex-direction: column;  
+}
+
+.contato-footer a{
+  color: #fff;
+  font-size: 2em;
+}
+
+.contato-footer p{
+  font-family: Poppins, sans-serif;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1em;
+  margin: 0.5em 0em 0em 3em;
+  align-items: center;
+  max-width: 40em;
+}
+
+.h2-footer {
+  grid-area: h2-footer;
+  color: #efd76b;
+  font-size: 1em;
+  margin: 0em 0em 0em 1em;
+}
+
+.sobre-footer {
+  grid-area: sobre-footer;
+  color: #fff;
+  font-size: 1em;
+  max-width: 26em;
+  margin: 0em 0em 0em 1em;
+}
 
 
+
+
+
+/* inicio secao rodape */
+
+/* inicio media queries */
 
 @media screen and (max-width: 1280px) {
+  /* inicio secao valores */
 
-/* inicio secao produtos */
+  .container-valores {
+    height: 80%;
+  }
+
+  /* final secao valores */
+
+  /* inicio secao produtos */
 
   .container-produtos .swiper-slide img {
     display: block;
     max-width: 100%;
-    height: 50vh;
+    height: 100vh;
     object-fit: cover;
   }
 
@@ -454,15 +513,55 @@ header .nav-bar {
 }
 
 @media screen and (max-width: 1080px) {
+  /* inicio menu principal */
+
+  header .nav-bar {
+    padding: 0px 124px;
+  }
+
+  /* final menu principal */
+
+  /* inicio secao home */
+
+  .media-icons {
+    right: 6em;
+  }
+
+  /* final secao home */
+
+  /* inicio secao sobre */
+
+  .container-sobre {
+    margin: 0em 0em -1em 0em;
+  }
+
+  .h2-sobre {
+    font-weight: 800;
+  }
+
+  .p-sobre {
+    margin: 0em 1.4em 0em 0em;
+    padding: 0em 0em 1em 0em;
+  }
+
+  /* final secao sobre */
+
+  /* inicio secao valores */
+
+  .container-valores {
+    max-height: 30em;
+  }
+
+  /* final secao valores */
 
   /* inicio secao produtos */
-  
-    .container-produtos .swiper-slide img {
-      max-width: 100%;
-    }
-  
-    /* final secao produtos */
+
+  .container-produtos .swiper-slide img {
+    max-width: 100%;
   }
+
+  /* final secao produtos */
+}
 
 @media screen and (max-width: 1024px) {
   /* inicio menu nav-bar */
@@ -549,29 +648,34 @@ header .nav-bar {
   /* inicio secao sobre */
 
   .container-sobre {
-    grid-template-rows: 0.4fr 1.2fr;
+    grid-template-rows: 0.24fr 1.2fr;
+  }
+
+  .h2-sobre {
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 0em 0em 0em 0em;
   }
 
   .p-sobre {
     grid-area: 2 / 2 / 3 / 3;
-    margin: 0em 1em 1em 0em;
-    display: flex;
-    flex-wrap: wrap;
+    margin: 0em 0em 0em 0em;
   }
 
   /* final secao sobre */
 
   /* inicio secao valores */
 
+  .container-valores {
+    max-height: 30em;
+  }
 
   /* final secao valores */
 
   /* inicio secao produtos */
 
-  .container-produtos .swiper-slide img {
+  .swiper-slide img {
     display: block;
     width: 100%;
-    height: 50vh;
     object-fit: cover;
   }
 
@@ -712,7 +816,7 @@ header .nav-bar {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 1.7fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr;
 
     background: #454f6b;
 
@@ -737,7 +841,6 @@ header .nav-bar {
     position: relative;
     justify-self: stretch;
     background-image: url(/img/sobre-img-5-ok.png);
-    min-height: 10em;
     margin: 0em 0em 1em 0em;
   }
 
@@ -756,9 +859,7 @@ header .nav-bar {
   .container-valores {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.6fr 1fr;
-
-    margin: 0em 0em 0em 0em;
+    grid-template-rows: 1fr 1fr 1fr;
 
     grid-template-areas:
       "h3-missao"
@@ -789,6 +890,7 @@ header .nav-bar {
   .p-missao,
   .p-visao,
   .p-valores {
+    grid-area: p-missao, p-visao, p-valores;
     font-size: 2em;
   }
 
@@ -796,16 +898,10 @@ header .nav-bar {
 
   /* inicio secao produtos */
 
-  .container-produtos .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
-
   /* final secao produtos */
 }
 
 @media screen and (max-width: 480px) {
-
   .nav-bar .logo {
     margin-left: 0px;
   }
@@ -948,7 +1044,7 @@ header .nav-bar {
   .container-valores {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.6fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
 
     grid-template-areas:
       "h3-missao"
@@ -962,23 +1058,48 @@ header .nav-bar {
       "p-valores";
   }
 
-  .h3-missao,
-  .h3-visao,
-  .h3-valores {
-    grid-area: h3-missao, h3-visao, h3-valores;
+  .h3-missao {
+    grid-area: h3-missao;
     font-size: 1.4em;
   }
 
-  .icon-missao,
-  .icon-visao,
-  .icon-valores {
-    grid-area: icon-missao, icon-visao, icon-valores;
+  .h3-visao {
+    grid-area: h3-visao;
+    font-size: 1.4em;
+  }
+
+  .h3-valores {
+    grid-area: h3-valores;
+    font-size: 1.4em;
+  }
+
+  .icon-missao {
+    grid-area: icon-missao;
     font-size: 2em;
   }
 
-  .p-missao,
-  .p-visao,
+  .icon-visao {
+    grid-area: icon-visao;
+    font-size: 2em;
+  }
+
+  .icon-valores {
+    grid-area: icon-valores;
+    font-size: 2em;
+  }
+
+  .p-missao {
+    grid-area: p-missao;
+    font-size: 1em;
+  }
+
+  .p-visao {
+    grid-area: p-visao;
+    font-size: 1em;
+  }
+
   .p-valores {
+    grid-area: p-valores;
     font-size: 1em;
   }
 
@@ -986,14 +1107,10 @@ header .nav-bar {
 
   /* inicio secao produtos */
 
-
-
   .swiper-slide img {
     width: 100%;
     min-height: 100vh;
   }
-
-
 
   /* final secao produtos */
 }
@@ -1031,7 +1148,7 @@ header .nav-bar {
     height: 100vh;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0 0.50);
+    background: rgba(0, 0, 0 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1087,7 +1204,7 @@ header .nav-bar {
 
   .swiper-slide img {
     width: 100%;
-    min-height: 100vh;
+    max-height: 100vh;
     background-size: cover;
   }
 
@@ -1120,7 +1237,7 @@ header .nav-bar {
 
   /* início home */
 
-    .media-icons { 
+  .media-icons {
     right: 1.6em;
   }
 
@@ -1148,7 +1265,8 @@ header .nav-bar {
 
   /* inicio secao produtos */
 
-  .container-produtos .swiper-slide img {
+  .swiper-slide img {
+    max-width: 100%;
   }
 
   /* final secao produtos */
