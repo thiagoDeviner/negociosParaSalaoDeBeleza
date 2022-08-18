@@ -87,7 +87,7 @@ header .nav-bar {
 
 .nav-close-btn,
 .nav-menu-btn {
-  display: block;
+  display: none;
 }
 
 .nav-bar .logo {
@@ -129,14 +129,15 @@ header .nav-bar {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 50%;
+  top: 54%;
   transform: translateY(-50%);
   margin-left: 210px;
+  align-items: center;
 }
 
 .media-icons a {
   color: var(--white-color);
-  font-size: 1.7em;
+  font-size: 1.5em;
   margin: 10px 0;
 }
 
@@ -329,7 +330,7 @@ header .nav-bar {
   gap: 0px 0px;
   background: #efd76b;
   margin: 0em 0em 0em 0em;
-  height: 50%;
+  height: 60%;
 
   grid-template-areas:
     ". h3-missao h3-visao h3-valores ."
@@ -431,6 +432,60 @@ header .nav-bar {
 
 /* final da secao produtos */
 
+/* inicio da secao depoimentos */
+
+.container-depoimentos {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "titulo-depoimentos titulo-depoimentos titulo-depoimentos"
+    "foto-depoimentos texto-depoimentos texto-depoimentos";
+
+    background-color: #fff7d4;
+    width: 100%;
+    padding: 2em 0em 2em 0em;
+
+}
+
+.titulo-depoimentos { 
+  grid-area: titulo-depoimentos;
+  font-size: 1.4em;
+  margin: 0em 0em 0em 0em;
+  justify-self: center;
+}
+
+.foto-depoimentos { 
+  grid-area: foto-depoimentos;
+  width: 100%; 
+  height: 70%;
+  margin: 0em 0em 0em 8em;
+}
+
+.foto-depoimentos img { 
+  grid-area: foto-depoimentos; 
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+}
+
+.texto-depoimentos { 
+  grid-area: texto-depoimentos; 
+  font-size: 1em;
+  font-weight: 500;
+  max-width: 22em;
+  margin: 0em 0em 0em 5em;
+}
+
+
+/* final da secao depoimentos */
+
+/* inicio da secao plataforma */
+
+/* final da secao plataforma */
+
 /* inicio secao rodape */
 
 .container-rodape {
@@ -441,6 +496,7 @@ header .nav-bar {
   grid-auto-flow: row;
 
   background: rgb(52, 50, 52);
+
   grid-template-areas:
     ". . h2-footer ."
     ". contato-footer sobre-footer ."
@@ -450,15 +506,16 @@ header .nav-bar {
 .contato-footer {
   grid-area: contato-footer;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
-.contato-footer a{
+.contato-footer a {
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
+  margin: 0em 0em 0.8em 0em;
 }
 
-.contato-footer p{
+.contato-footer p {
   font-family: Poppins, sans-serif;
   color: #fff;
   font-weight: 300;
@@ -468,7 +525,7 @@ header .nav-bar {
   max-width: 40em;
 }
 
-.h2-footer  {
+.h2-footer {
   grid-area: h2-footer;
   color: #efd76b;
   font-size: 1em;
@@ -493,7 +550,7 @@ header .nav-bar {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color:#efd76b; /* Set a background color */
+  background-color: #efd76b; /* Set a background color */
   color: var(--dark-color); /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -502,7 +559,7 @@ header .nav-bar {
 }
 
 #myBtn:hover {
-  background-color:#86783d; /* Add a dark-grey background on hover */
+  background-color: #86783d; /* Add a dark-grey background on hover */
 }
 
 /* inicio media queries */
@@ -876,6 +933,7 @@ header .nav-bar {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    min-height: 100%;
 
     grid-template-areas:
       "h3-missao"
@@ -913,6 +971,13 @@ header .nav-bar {
   /* final secao valores */
 
   /* inicio secao produtos */
+
+  .container-produtos {
+    max-width: 100%;
+    padding: 0em 0em 0em 0em;
+    min-height: 50vh;
+    background: #fff;
+  }
 
   /* final secao produtos */
 }
